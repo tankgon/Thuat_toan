@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lọc danh sách có giói tính là nam</p>
+
+    <script>
+        const human = [
+            {id: 1, name: "a", gender:"nu"},
+            {id: 2, name: "b", gender:"nu"},
+            {id: 3, name: "c", gender:"nam"},
+            {id: 4, name: "d", gender:"nu"},
+            {id: 5, name: "e", gender:"nu"},
+            {id: 6, name: "f", gender:"nam"},
+        ];
+
+        const mang = human.reduce((arr, item)=>{
+            if(item.gender == "nam"){
+                arr.push({
+                    name: `${item.name}${item.id}`,
+                    gioitinh: `${item.gender}`,
+                })
+            }
+            return arr
+        },[])
+
+        console.log(mang);
+
+    </script>
+</body>
+</html>
