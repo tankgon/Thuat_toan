@@ -10,24 +10,36 @@
     <script>
 
         let Product = [
-            { name: 'CPU', price: 750, quality: 10, categoryId: 1 },
-            { name: 'RAM', price: 50, quality: 2, categoryId: 2 },
-            { name: 'HDD', price: 70, quality: 1, categoryId: 2 },
-            { name: 'Main', price: 400, quality: 3, categoryId: 1 },
-            { name: 'Keyboard', price: 30, quality: 8, categoryId: 4 },
-            { name: 'Mouse', price: 25, quality: 50, categoryId: 4 },
-            { name: 'VGA', price: 60, quality: 35, categoryId: 3 },
-            { name: 'Monitor', price: 120, quality: 28, categoryId: 2 },
-            { name: 'Case', price: 120, quality: 28, categoryId: 5 },
+            { name: 'CPU', price: 750, quality: 10, categoryId: 1, status: "old" },
+            { name: 'RAM', price: 50, quality: 2, categoryId: 2, status: "old" },
+            { name: 'HDD', price: 70, quality: 1, categoryId: 2, status: "new" },
+            { name: 'Main', price: 400, quality: 3, categoryId: 1, status: "new" },
+            { name: 'Keyboard', price: 30, quality: 8, categoryId: 4, status: "old" },
+            { name: 'Mouse', price: 25, quality: 50, categoryId: 4, status: "old" },
+            { name: 'VGA', price: 60, quality: 35, categoryId: 3, status: "old" },
+            { name: 'Monitor', price: 120, quality: 28, categoryId: 2, status: "new" },
+            { name: 'Case', price: 120, quality: 28, categoryId: 5, status: "new" },
         ]
     //sap xep theo gia
+    const mang = Product.reduce((arr, item)=>{
+        if(item.status === "new"){
+            arr.push({
+                name: `${item.name}`,
+                price: `${item.price}`,
+            })
+        }
+        return arr
+    },[])
+    const xapXepGia_0 = mang.sort((a,b) => a.price - b.price).slice(0,10)
+    console.log(xapXepGia_0);
+
     const xapXepGia = Product.sort((a,b) => a.price - b.price).slice(0,6)
+
     //sap xep theo do dai cua ten
     // const xapSepTen = Product.sort((a,b) => a.name.length - b.name.length)
     // console.log(xapSepTen); 
-
-    console.log(xapXepGia);
-
+        
+  console.log(xapXepGia);
     
     </script>
 </body>

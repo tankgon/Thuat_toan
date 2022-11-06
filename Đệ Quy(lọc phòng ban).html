@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 2</title>
+</head>
+<body></body>
+</html>
+<script>
+    const data = [
+        { id: 9999999, name: 'TPHCM', parentId: null },
+
+        { id: 1, name: 'GHTK', parentId: 9999999 },
+        { id: 11, name: 'Phòng CNTT', parentId: 1 },
+        { id: 111, name: 'Nhóm 1', parentId: 11 },
+        { id: 12, name: 'Phòng KT', parentId: 1 },
+        { id: 121, name: 'Nhóm 1', parentId: 12 },
+        { id: 122, name: 'Nhóm 2', parentId: 12 },
+
+        { id: 2, name: 'FPT', parentId: 9999999 },
+        { id: 21, name: 'Phòng Giám sát FPT', parentId: 2 },
+        { id: 211, name: 'Nhóm 1', parentId: 21 },
+        { id: 212, name: 'Nhóm 2', parentId: 21 },
+        { id: 22, name: 'Phòng Pháp chế', parentId: 2 },
+        { id: 221, name: 'Nhóm 1', parentId: 22 },
+        { id: 222, name: 'Nhóm 2', parentId: 22, parentId: 21},
+    ];
+
+
+
+    const rederData = (data) => {
+        let arrParent = data.find(items => items.parentId === null)
+        return {
+            ...arrParent,
+            Children : renderChildren(arrParent.id, data)
+        }
+    }
+
+    const renderChildren = (arrayParent ,data) => {
+        let arrId = data.filter(items => items.id !== arrayParent)
+        let arrParentID = arrId.filter(items => items.parentId === arrayParent)
+        return arrParentID.map(items => {
+            return {
+                ...items,
+                children: renderChildren(items.id, arrId)
+            }
+        })
+    }
+
+    console.log(rederData(data))
+
+</script>

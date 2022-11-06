@@ -9,13 +9,83 @@
 <body>
     <script>
 
-    const vowels = "thanhe";
+    // const vowels = "thanhe";
 
 
-        if(vowels.includes('tha')) console.log("T");
+        // if(vowels.includes('tha')) console.log("T");
   
-        if(!vowels.includes('tha')) console.log("F");
-    
+        // if(!vowels.includes('tha')) console.log("F");
+
+
+
+    //LeetCode_2
+    // var isPalindrome = function(x) {
+    //     if(x>0){
+    //         if((String(x).charAt(0)) == (String(x).charAt(2))){
+    //             x = true
+    //         }else x =false     
+    //     }else x = false
+    //     console.log(String(x));
+    // };
+    // isPalindrome(121)
+
+    //LeetCode_1295
+    // var findNumbers = function(nums) {
+    //     let total = 0;
+    //     for(let i = 0; i<nums.length; i++){       
+    //         let count = 0;
+    //         let qk;
+    //         while(nums[i] !== 0 ){
+    //             qk = nums[i]/10;
+    //             nums[i]= parseInt(qk);
+    //             count++;
+    //             console.log('nums:', nums[i]);
+    //         }
+    //         console.log(count);
+    //         if(count % 2 == 0){
+    //             total++
+    //         }   
+    //     }
+    //     console.log(total); 
+    // };
+    // findNumbers([12,345,2,6,7896])
+
+    // LeetCode_88
+    // var merge = function(nums1, m, nums2, n) {
+    //     let first = m-1;
+    //     let secons = n -1;
+    //     let i = (m+n)-1;
+    //     while(secons >= 0){
+    //         const fValue = nums1[first]
+    //         const sValue = nums2[secons]
+    //         if(fValue > sValue){
+    //             nums1[i] = fValue;
+    //             i--;
+    //             first--;
+    //         }else {
+    //             nums1[i] = sValue;
+    //             i--;
+    //             secons--;
+    //         }
+    //     }
+    //     console.log(nums1);
+    // };
+    // merge([1,2,3,0,0,0],3,[2,5,6],3)
+ 
+    // LeetCode_27
+    var removeElement = function(nums, val) {
+        for (let i = 0; i< nums.length;){
+            if(nums[i] == val){
+                for(let j = i; j<= (nums.length-2);j++){
+                    nums[j] = nums[j+1];
+                }
+                nums.length--;
+            }else i++;
+        }
+        // console.log(nums);
+    };
+    removeElement([3,2,2,3],3)
+
 
     
     </script>

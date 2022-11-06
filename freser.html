@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+
+    <script>
+        const data = [
+            {subject: 'a', product: 'a2'},
+            {subject: 'a', product: 'a1'},
+            {subject: 'a', product: 'a3'},
+
+            {subject: 'b', product: 'b3'},
+            {subject: 'b', product: 'b6'},
+
+            {subject: 'c', product: 'c11'},
+
+            {subject: 'd', product: 'd3'},
+            {subject: 'd', product: 'd4'},
+            {subject: 'd', product: 'd3'},
+            {subject: 'd', product: 'd1'},
+        ]
+
+        const render = () => {
+            const arr = []
+            data.map((item) => {
+                {!arr[item.subject]
+                    ? arr[item.subject] = {subject: item.subject, product:[item.product]}
+                    : arr[item.subject].product.push({product: item.product})
+                }
+            })
+            console.log(arr);
+        }
+        render()
+    </script>
+</body>
+</html>
