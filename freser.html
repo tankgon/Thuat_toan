@@ -8,8 +8,6 @@
 </head>
 <body>
 
-    
-
     <script>
         const data = [
             {subject: 'a', product: 'a2'},
@@ -26,13 +24,15 @@
             {subject: 'd', product: 'd3'},
             {subject: 'd', product: 'd1'},
         ]
+        
 
         const render = () => {
             const arr = []
-            data.map((item) => {
-                {!arr[item.subject]
-                    ? arr[item.subject] = {subject: item.subject, product:[item.product]}
-                    : arr[item.subject].product.push({product: item.product})
+            data.map((items) => {
+                {
+                    !arr[items.subject]
+                    ? arr[items.subject] = {subject: items.subject, product: [items.product]}
+                    : arr[items.subject].product.push({"items": items.product})
                 }
             })
             console.log(arr);

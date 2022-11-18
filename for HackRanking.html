@@ -27,7 +27,7 @@
     //     }else x = false
     //     console.log(String(x));
     // };
-    // isPalindrome(121)
+    // isPalindrome(141)
 
     //LeetCode_1295
     // var findNumbers = function(nums) {
@@ -39,25 +39,30 @@
     //             qk = nums[i]/10;
     //             nums[i]= parseInt(qk);
     //             count++;
-    //             console.log('nums:', nums[i]);
+    //             // console.log('nums:', nums[i]);
     //         }
-    //         console.log(count);
+    //         console.log('count:',count);
     //         if(count % 2 == 0){
     //             total++
     //         }   
     //     }
-    //     console.log(total); 
+    //     console.log('total:',total); 
     // };
     // findNumbers([12,345,2,6,7896])
 
     // LeetCode_88
     // var merge = function(nums1, m, nums2, n) {
     //     let first = m-1;
+        
     //     let secons = n -1;
+        
     //     let i = (m+n)-1;
+
     //     while(secons >= 0){
     //         const fValue = nums1[first]
+            
     //         const sValue = nums2[secons]
+    //         console.log(sValue);
     //         if(fValue > sValue){
     //             nums1[i] = fValue;
     //             i--;
@@ -73,18 +78,123 @@
     // merge([1,2,3,0,0,0],3,[2,5,6],3)
  
     // LeetCode_27
-    var removeElement = function(nums, val) {
-        for (let i = 0; i< nums.length;){
-            if(nums[i] == val){
-                for(let j = i; j<= (nums.length-2);j++){
-                    nums[j] = nums[j+1];
-                }
-                nums.length--;
-            }else i++;
+    // var removeElement = function(nums, val) {
+    //     for (let i = 0; i< nums.length;){
+    //         if(nums[i] == val){
+    //             for(let j = i; j<= (nums.length-2);j++){
+    //                 nums[j] = nums[j+1];
+    //             }
+    //             nums.length--;
+    //         }else i++;
+    //     }
+    //     console.log(nums);
+    // };
+    // removeElement([3,2,2,3,4,5],2)
+
+    // const remoteElement = (arr, element) => {
+    //     arr.map((items, index)=>{
+    //         items === element ? items.length-- : console.log(items)
+    //     })
+    // }
+    // remoteElement([1,2,2,3,4], 2)
+
+    function timeLoad(LoadingNumber) {
+            // --c1
+        const houre = Math.floor(LoadingNumber/3600)
+        const minutes = LoadingNumber % 60
+        const seconds = LoadingNumber % 60
+        console.log(
+            (minutes > 60 
+            ? houre+1 + " houre " + (minutes-60) + " minutes " + seconds +" seconds" 
+            : houre + " houre " + minutes + " minutes " + seconds +" seconds" ) 
+        );     
+        //     --c2
+        // var t = Date.parse(LoadingNumber) - Date.parse(new Date());
+        // var seconds = Math.floor((t / 1000) % 60);
+        // var minutes = Math.floor((t / 1000 / 60) % 60);
+        // var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+
+        // console.log(hours + " houre " + minutes + " minutes " + seconds +" seconds" ) 
+
+    }
+    timeLoad(120)
+    function getTime(time) {
+        let hour = Math.floor(time / 3600);
+        let minute,
+        second = 0;
+        if (hour >= 1) {
+            minute = Math.floor((time % 3600) / 60);
+            minute >= 1 ? (second = Math.floor((time % 3600) % 60)) : (second = time % 3600);
+        } else {
+            minute = Math.floor(time / 60);
+            minute >= 1 ? (second = Math.floor(time % 60)) : (second = time);
         }
-        // console.log(nums);
-    };
-    removeElement([3,2,2,3],3)
+        return console.log(`${hour} : ${minute} : ${second}`);
+    }
+    getTime(12127900);
+
+    //inten
+    // function parseCommaSeparatedList(data){
+    //     data.map((items)=>{ console.log(items.replace(/'/g, ''))})
+    // }
+    // parseCommaSeparatedList(['thanh', "'hehe'", "abc"])
+
+    // function getPerimeter(length, width) {
+    //     let perimeter = 2*(length + width);
+    //     console.log(perimeter); 
+    // }
+    // getPerimeter(3, 4.5)
+
+    // function Factorial(n){
+    //     var total = 1;
+    //     for(var i=1; i<=n; i++){
+    //         total = total * i
+    //     }
+    //     console.log(total); 
+    // }
+    // Factorial(25)
+
+    // function getLetter(s) {
+
+    //     if(s.includes('a','e','i','o','u')) console.log("A")
+    //     if(s.includes('b','c','d','f','g')) console.log("B")
+    //     if(s.includes('h','i','k','l','m')) console.log("C")
+    //     if(s.includes('n','p','q','r','s','t','v','w','x','y','z')) console.log("D")
+
+    // }
+    // getLetter('')
+
+
+
+    //// find number second
+    // function getSecondLargest(nums) {
+
+    //     //solution1 sort sắp xếp
+    //     let seconN = 0;
+    //     let arr = [];
+    //     nums.sort(((a,b) => { 
+    //         if(b < a) seconN = b
+    //         arr.push(seconN)
+    //     }))
+    //     console.log(arr[arr.length-1]);
+
+    //     //solution2 for so sánh
+    //     let first = nums[0]; 
+    //     let second = -1;
+    //         for (let i = 0; i < nums.length; i++) {
+    //         if (nums[i] > first) {
+    //             second = first;
+    //             first = nums[i]
+    //         }
+
+    //         if (nums[i] > second && nums[i] < first) {
+    //             second = nums[i];
+    //         }
+    //     }
+    //     console.log(second); 
+
+    // }
+    // getSecondLargest([2,3,4,5,6,1,8,7,8,8,8,8,8,9,9,9,9,9])
 
 
     

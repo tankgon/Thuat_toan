@@ -19,16 +19,24 @@
             {id: 6, name: "f", gender:"nam"},
         ];
 
-        const mang = human.reduce((arr, item)=>{
-            if(item.gender == "nam"){
-                arr.push({
-                    name: `${item.name}${item.id}`,
-                    gioitinh: `${item.gender}`,
-                })
-            }
-            return arr
-        },[])
-        console.log(mang);
+        // const mang = human.reduce((arr, item)=>{
+        //     if(item.gender == "nam"){
+        //         arr.push({
+        //             name: `${item.name}${item.id}`,
+        //             gioitinh: `${item.gender}`,
+        //         })
+        //     }
+        //     return arr
+        // },[])
+        // console.log(mang);
+
+        var arr = [];
+        human.map((items)=>{
+            {items.gender == "nam"
+                ? arr.push({name: items.name, gender: items.gender})
+                : null}
+        })
+        console.log(arr);
 
     </script>
 </body>
