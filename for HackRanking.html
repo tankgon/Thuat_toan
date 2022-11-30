@@ -8,27 +8,6 @@
 </head>
 <body>
     <script>
-
-    // const vowels = "thanhe";
-
-
-        // if(vowels.includes('tha')) console.log("T");
-  
-        // if(!vowels.includes('tha')) console.log("F");
-
-
-
-    //LeetCode_2
-    // var isPalindrome = function(x) {
-    //     if(x>0){
-    //         if((String(x).charAt(0)) == (String(x).charAt(2))){
-    //             x = true
-    //         }else x =false     
-    //     }else x = false
-    //     console.log(String(x));
-    // };
-    // isPalindrome(141)
-
     //LeetCode_1295
     // var findNumbers = function(nums) {
     //     let total = 0;
@@ -39,7 +18,6 @@
     //             qk = nums[i]/10;
     //             nums[i]= parseInt(qk);
     //             count++;
-    //             // console.log('nums:', nums[i]);
     //         }
     //         console.log('count:',count);
     //         if(count % 2 == 0){
@@ -53,14 +31,10 @@
     // LeetCode_88
     // var merge = function(nums1, m, nums2, n) {
     //     let first = m-1;
-        
     //     let secons = n -1;
-        
     //     let i = (m+n)-1;
-
     //     while(secons >= 0){
     //         const fValue = nums1[first]
-            
     //         const sValue = nums2[secons]
     //         console.log(sValue);
     //         if(fValue > sValue){
@@ -77,7 +51,7 @@
     // };
     // merge([1,2,3,0,0,0],3,[2,5,6],3)
  
-    // LeetCode_27
+    // bỏ số cho trước
     // var removeElement = function(nums, val) {
     //     for (let i = 0; i< nums.length;){
     //         if(nums[i] == val){
@@ -89,8 +63,9 @@
     //     }
     //     console.log(nums);
     // };
-    // removeElement([3,2,2,3,4,5],2)
+    // removeElement([7,3,2,2,3,4,5],2)
 
+    //bỏ số cho trước
     // const remoteElement = (arr, element) => {
     //     arr.map((items, index)=>{
     //         items === element ? items.length-- : console.log(items)
@@ -98,53 +73,29 @@
     // }
     // remoteElement([1,2,2,3,4], 2)
 
-    function timeLoad(LoadingNumber) {
-            // --c1
-        const houre = Math.floor(LoadingNumber/3600)
-        const minutes = LoadingNumber % 60
-        const seconds = LoadingNumber % 60
-        console.log(
-            (minutes > 60 
-            ? houre+1 + " houre " + (minutes-60) + " minutes " + seconds +" seconds" 
-            : houre + " houre " + minutes + " minutes " + seconds +" seconds" ) 
-        );     
-        //     --c2
-        // var t = Date.parse(LoadingNumber) - Date.parse(new Date());
-        // var seconds = Math.floor((t / 1000) % 60);
-        // var minutes = Math.floor((t / 1000 / 60) % 60);
-        // var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+    //Cho số nguyên hiển thị thời gian giờ phút giây
+    // function getTime(time) {
+    //     let hour = Math.floor(time / 3600);
+    //     let minute,
+    //     second = 0;
+    //     if (hour >= 1) {
+    //         minute = Math.floor((time % 3600) / 60);
+    //         minute >= 1 ? (second = Math.floor((time % 3600) % 60)) : (second = time % 3600);
+    //     } else {
+    //         minute = Math.floor(time / 60);
+    //         minute >= 1 ? (second = Math.floor(time % 60)) : (second = time);
+    //     }
+    //     return console.log(`${hour} : ${minute} : ${second}`);
+    // }
+    // getTime(12127900);
 
-        // console.log(hours + " houre " + minutes + " minutes " + seconds +" seconds" ) 
-
-    }
-    timeLoad(120)
-    function getTime(time) {
-        let hour = Math.floor(time / 3600);
-        let minute,
-        second = 0;
-        if (hour >= 1) {
-            minute = Math.floor((time % 3600) / 60);
-            minute >= 1 ? (second = Math.floor((time % 3600) % 60)) : (second = time % 3600);
-        } else {
-            minute = Math.floor(time / 60);
-            minute >= 1 ? (second = Math.floor(time % 60)) : (second = time);
-        }
-        return console.log(`${hour} : ${minute} : ${second}`);
-    }
-    getTime(12127900);
-
-    //inten
+    //hiển thị chữ bỏ dấu ''
     // function parseCommaSeparatedList(data){
     //     data.map((items)=>{ console.log(items.replace(/'/g, ''))})
     // }
     // parseCommaSeparatedList(['thanh', "'hehe'", "abc"])
 
-    // function getPerimeter(length, width) {
-    //     let perimeter = 2*(length + width);
-    //     console.log(perimeter); 
-    // }
-    // getPerimeter(3, 4.5)
-
+    // Tính giai thừa
     // function Factorial(n){
     //     var total = 1;
     //     for(var i=1; i<=n; i++){
@@ -152,23 +103,19 @@
     //     }
     //     console.log(total); 
     // }
-    // Factorial(25)
+    // Factorial(4)
 
+    //Hiển thị các chữ cái
     // function getLetter(s) {
-
     //     if(s.includes('a','e','i','o','u')) console.log("A")
     //     if(s.includes('b','c','d','f','g')) console.log("B")
     //     if(s.includes('h','i','k','l','m')) console.log("C")
     //     if(s.includes('n','p','q','r','s','t','v','w','x','y','z')) console.log("D")
-
     // }
-    // getLetter('')
+    // getLetter('hahan')
 
-
-
-    //// find number second
+    // Tìm số lớn thứ 2
     // function getSecondLargest(nums) {
-
     //     //solution1 sort sắp xếp
     //     let seconN = 0;
     //     let arr = [];
@@ -177,7 +124,6 @@
     //         arr.push(seconN)
     //     }))
     //     console.log(arr[arr.length-1]);
-
     //     //solution2 for so sánh
     //     let first = nums[0]; 
     //     let second = -1;
@@ -186,16 +132,39 @@
     //             second = first;
     //             first = nums[i]
     //         }
-
     //         if (nums[i] > second && nums[i] < first) {
     //             second = nums[i];
     //         }
     //     }
     //     console.log(second); 
-
     // }
     // getSecondLargest([2,3,4,5,6,1,8,7,8,8,8,8,8,9,9,9,9,9])
 
+
+    //nhóm 2 phần tử lại với nhau
+    // const addArr = (arr) => {
+    //     array = []
+    //     for(let i=0 ; i < arr.length ; i++){
+    //         array.push((arr[i+1] == undefined ? [arr[i]] : [arr[i], arr[i+1]] ))   
+    //         arr[i] = arr [i++]             
+    //     }
+    //     console.log(array);
+    // }
+    // addArr([2,6,2,7,1])
+
+
+
+
+    //hiện thị các phép tính cộng lại bằng target
+    const twoSum =(number , target) => {
+        arr = []
+        for(let i=0 ; i<number.length ; i++){    
+            arr.push(target - number[i])
+            arr.map((item) => (item == number[i] ? console.log(number[i], target - number[i]) : null) )
+        }
+        console.log(arr);
+    }
+    twoSum([2,6,3,7,1], 9)
 
     
     </script>
